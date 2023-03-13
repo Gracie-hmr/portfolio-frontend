@@ -7,27 +7,92 @@ html, * {
    list-style-type: none;
    display: flex;
    margin: 0;
-   padding: 0;
-   
+   padding: 0;  
+
 }
 
 .menu-item {
-display: inline-block;
 margin-right: 32px;
 color: white;
+font-size: 14px;
+line-height: 150%;
+
 }
+
+.menu-item > a {
+text-decoration: none;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+padding: 0px;
+
+}
+
+/*.inline {
+    display: block;
+    width: 200px;
+    height: 250px;
+    background-color: red;
+    color: white;
+}*/
 
 .menu-item:last-child {
-    margin-right:0;
+    margin-right: 0;
 }
 
+.menu-item > a:hover {
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
+
+
+}
+
+.menu-item > a:hover::after {
+    content: " ";
+    width: 9px;
+    height: 0px;
+    border: 2.5px solid #E3E4E6;
+    border-radius: 2px;
+
+}
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* чтобы расположились по краям*/
     background-color: #010201;
+    height: 96px;
+    align-items: center; /* чтобы расположить по середине вертикально*/
+    padding: 0 112px; /*внешние отступы, если расстояние сверху-снизу и справа-слева одинаковые*/
 }
 
 .logo > img {
     height: 28px;
     width: 96px;
+}
+
+.hero-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #010201;
+padding: 220px 0 112px 42px 112px;
+color: hsla(220, 6%, 90%, 0.55);
+gap: 234px;
+}
+
+.hero-section_description {
+color:#E3E4E6;
+}
+
+.hero-section__icon {
+width: 40px;
+height: 40px;
+}
+
+.hero-section__icon, .hero-section_description, .hero-section {
+    font-size: 56px;
+    line-height: 150%;
 }
